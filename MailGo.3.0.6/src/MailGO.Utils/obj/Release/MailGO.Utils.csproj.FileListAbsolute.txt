@@ -1,0 +1,11 @@
+G:\work\c#\MailGo.3.0.4\build\MailGO.Utils\MailGO.Utils.dll
+G:\work\c#\MailGo.3.0.4\build\MailGO.Utils\MailGO.Utils.pdb
+G:\work\c#\MailGo.3.0.4\build\MailGO.Utils\ja\MailGO.Utils.resources.dll
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\DataDesign.MailGO.Utils.ResourceUtil.resources
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\DataDesign.MailGO.Utils.ResourceUtil.ja.resources
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\MailGO.Utils.csproj.GenerateResource.cache
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\ja\MailGO.Utils.resources.dll
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\MailGO.Utils.csproj.CopyComplete
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\MailGO.Utils.dll
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\MailGO.Utils.pdb
+G:\work\c#\MailGo.3.0.4\src\MailGO.Utils\obj\Release\MailGO.Utils.csprojAssemblyReference.cache

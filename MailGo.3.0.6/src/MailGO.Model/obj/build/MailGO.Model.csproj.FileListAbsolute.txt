@@ -1,0 +1,5 @@
+E:\work\freelancer\C#\MailGo.3.0.4\build\MailGO.Model\MailGO.Model.dll
+E:\work\freelancer\C#\MailGo.3.0.4\build\MailGO.Model\MailGO.Model.pdb
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Model\obj\build\MailGO.Model.csproj.CoreCompileInputs.cache
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Model\obj\build\MailGO.Model.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Model\obj\build\MailGO.Model.pdb

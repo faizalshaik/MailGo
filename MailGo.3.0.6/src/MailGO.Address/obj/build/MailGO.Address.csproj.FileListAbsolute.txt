@@ -1,0 +1,12 @@
+E:\work\freelancer\C#\MailGo.3.0.4\build\MailGO.Address\MailGO.Address.dll
+E:\work\freelancer\C#\MailGo.3.0.4\build\MailGO.Address\MailGO.Address.pdb
+E:\work\freelancer\C#\MailGo.3.0.4\build\MailGO.Address\ja\MailGO.Address.resources.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\MailGO.Address.csprojResolveAssemblyReference.cache
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\DataDesign.MailGO.Address.AddressWF.resources
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\DataDesign.MailGO.Address.NoMatchWF.resources
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\DataDesign.MailGO.Address.AddressWF.ja.resources
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\DataDesign.MailGO.Address.NoMatchWF.ja.resources
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\MailGO.Address.csproj.GenerateResource.Cache
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\ja\MailGO.Address.resources.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\MailGO.Address.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Address\obj\build\MailGO.Address.pdb

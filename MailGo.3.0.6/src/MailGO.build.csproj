@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A371279-2958-432E-B066-9723F62DFD58}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Project1</RootNamespace>
+    <AssemblyName>Project1</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\AssemblyInfoTask\Microsoft.VersionNumber.targets" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\AssemblyInfoTask\Microsoft.VersionNumber.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  
+  -->
+  <!-- MSBUILD SCRIPT 
+	   MADE BY NGUYEN VAN THOAI
+	   DATA DESIGN LTD
+	   2006/12/06	
+  -->
+  <!-- ========================================================== -->
+  <!-- DO SOME MODIFICATIONS FOR THIS FILE RUN WITH YOUR SOLUTION -->
+  <!-- ========================================================== -->
+  <PropertyGroup>	
+	<BuildSetupdDir>MailGO.Setup</BuildSetupdDir>		<!-- Ouput dir of Deployment project			-->
+	<BuildAccessoriesSetupdDir>MailGO.AccessoriesSetup</BuildAccessoriesSetupdDir>		<!-- Ouput dir of Deployment project			-->
+	<CvsModuleName>Kimado</CvsModuleName>						<!-- Module name in CVS Source Server			-->
+	<SolutionToBuild>MailGO.sln</SolutionToBuild>			<!-- Main Solution								-->
+	<MSBuildProject>MailGO.build.csproj</MSBuildProject>    <!-- This file must be placed in folder src		-->
+	<BuiltSetupExe>Setup.exe</BuiltSetupExe>				<!-- Created by deployment project				-->
+	<BuiltSetupMsi>MailGO.Setup.msi</BuiltSetupMsi>	<!-- Created by deployment project				-->
+	<BuiltAccessoriesSetupMsi>MailGO.AccessoriesSetup.msi</BuiltAccessoriesSetupMsi>	<!-- Created by deployment project				-->
+	<AssemblyInfoFile>MailGO.Addin\AssemblyInfo.cs</AssemblyInfoFile>
+	<AssemblyProductDescription>MailGO Outlook Addin</AssemblyProductDescription>
+	<AssemblyCompanyDescription>DataDesign Co. Ltd.</AssemblyCompanyDescription> 
+	<AssemblyCopyrightDescription>Copyright (C) by DataDesign Co. Ltd.</AssemblyCopyrightDescription>
+	<ReleaseDir>D:\DDV-RELEASE\Kimado</ReleaseDir>
+  </PropertyGroup>	
+  
+  
+  
+  <!-- =========================================================== -->
+  <!-- ALMOST NO NEED TO DO ANY MODIFICATIONS TO THESE LINES BELOW -->
+  <!-- JUST DO SOME CHANGES OF TASK (DISTPUBLISH) IF NEEDED		   -->  
+  <!-- =========================================================== -->
+  <PropertyGroup>
+	<WorkingDirectory>..</WorkingDirectory>
+    <BuildDir>$(WorkingDirectory)\build</BuildDir>
+	<DistdDir>$(WorkingDirectory)\dist</DistdDir>
+	<SourceDir>src</SourceDir>
+	<CvsRoot>:pserver;username=thoai;password=ddcddc;hostname=win2k3server;port=2401:/DDV</CvsRoot>
+	<CvsExe>C:\Program Files\CVSNT\cvs.exe</CvsExe>
+	<ConfigurationToBuild>build</ConfigurationToBuild>
+	<BuildLogFile>build.log</BuildLogFile>
+	<NunitConsoleExe>D:\DDV-BUILD-TOOLS\nunit-2.0\nunit-console.exe</NunitConsoleExe>
+	<DevenvExe>C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\devenv.exe</DevenvExe>
+	<BuildNumber>$(CCNetLabel)</BuildNumber>	
+	<AssemblyVersion>1.1.0.$(BuildNumber)</AssemblyVersion>
+	<PublishDir>$(ReleaseDir)\$(BuildNumber)</PublishDir>
+  </PropertyGroup>	
+
+  <Target Name="Clean">
+		<RemoveDir
+				Directories="$(BuildDir);$(DistdDir)" />
+  </Target>
+
+  <Target Name="Init" DependsOnTargets="Clean">
+	   <MakeDir
+				Directories="$(BuildDir);$(DistdDir)" />
+  </Target>
+
+  <Target Name="Checkout" DependsOnTargets="Init">
+   	  <Exec 
+			Command="&quot;$(CvsExe)&quot; -d $(CvsRoot) -q checkout -P -d $(BuildDir) -- $(CvsModuleName)"
+			WorkingDirectory="."	
+	  />
+  </Target>  
+
+  <Target Name="AssemblyInfo" Condition=" '$(BuildNumber)' != ''">
+	<AssemblyInfo
+		 AssemblyCompany = "$(AssemblyCompanyDescription)" 
+		 AssemblyProduct = "$(AssemblyProductDescription)"
+         AssemblyCopyright = "$(AssemblyCopyrightDescription)"         
+		 AssemblyVersion = "$(AssemblyVersion)"
+		 AssemblyInfoFiles="$(BuildDir)\$(SourceDir)\$(AssemblyInfoFile)"		 
+	/>
+  </Target>  
+
+  <Target Name="Compile" DependsOnTargets="Init">
+	  <Exec
+			Timeout="600000" 
+			Command="&quot;$(DevenvExe)&quot; &quot;$(SolutionToBuild)&quot; /build &quot;$(ConfigurationToBuild)&quot; /out ..\build\$(BuildLogFile)"
+			WorkingDirectory="$(WorkingDirectory)\$(SourceDir)"
+	  />
+	  <MakeDir Directories="$(DistdDir)\$(BuildSetupdDir)\KB908002" />
+	  <Message Text="Start to copy file $(BuildDir)\$(BuildSetupdDir)\$(BuiltSetupExe) to file $(DistdDir)\$(BuildSetupdDir)\Setup_build$(BuildNumber).exe" />
+	  <Copy
+            SourceFiles="$(BuildDir)\$(BuildSetupdDir)\$(BuiltSetupExe)"
+			DestinationFiles="$(DistdDir)\$(BuildSetupdDir)\Setup_build$(BuildNumber).exe"
+      />
+	  <Message Text="Start to copy file $(BuildDir)\$(BuildSetupdDir)\$(BuiltSetupMsi) to folder $(DistdDir)\$(BuildSetupdDir)" />
+	  <Copy
+            SourceFiles="$(BuildDir)\$(BuildSetupdDir)\$(BuiltSetupMsi)"
+			DestinationFolder = "$(DistdDir)\$(BuildSetupdDir)"
+      />
+	  <Message Text="Start to copy file $(BuildDir)\$(BuildSetupdDir)\KB908002 to folder $(DistdDir)\$(BuildSetupdDir)\KB908002" />
+	  <Copy
+            SourceFiles="$(BuildDir)\$(BuildSetupdDir)\KB908002\extensibilityMSM.msi"
+			DestinationFolder = "$(DistdDir)\$(BuildSetupdDir)\KB908002"
+      />
+	  <Copy
+            SourceFiles="$(BuildDir)\$(BuildSetupdDir)\KB908002\lockbackRegKey.msi"
+			DestinationFolder = "$(DistdDir)\$(BuildSetupdDir)\KB908002"
+      />
+	  <Copy
+            SourceFiles="$(BuildDir)\$(BuildSetupdDir)\KB908002\office2003-kb907417sfxcab-ENU.exe"
+			DestinationFolder = "$(DistdDir)\$(BuildSetupdDir)\KB908002"
+      />
+
+<Copy
+            SourceFiles="$(BuildDir)\$(BuildAccessoriesSetupdDir)\$(BuiltSetupExe)"
+			DestinationFiles="$(DistdDir)\$(BuildAccessoriesSetupdDir)\Setup_build$(BuildNumber).exe"
+      />
+
+<Copy
+            SourceFiles="$(BuildDir)\$(BuildAccessoriesSetupdDir)\$(BuiltAccessoriesSetupMsi)"
+			DestinationFolder = "$(DistdDir)\$(BuildAccessoriesSetupdDir)"
+      />
+
+
+  </Target>
+
+
+  <Target Name="DistPublish" DependsOnTargets="Compile">
+	 <MakeDir Directories="$(PublishDir)\$(BuildSetupdDir)" />
+	<MakeDir Directories="$(PublishDir)\$(BuildAccessoriesSetupdDir)" />
+	<MakeDir Directories="$(PublishDir)\$(BuildSetupdDir)\KB908002" />
+	 <Copy
+            SourceFiles="$(DistdDir)\$(BuildSetupdDir)\Setup_build$(BuildNumber).exe"
+			DestinationFiles="$(PublishDir)\$(BuildSetupdDir)\Setup_build$(BuildNumber).exe" />
+	 <Copy
+            SourceFiles="$(DistdDir)\$(BuildSetupdDir)\$(BuiltSetupMsi)"
+			DestinationFolder="$(PublishDir)\$(BuildSetupdDir)" />
+	  <Copy
+            SourceFiles="$(DistdDir)\$(BuildSetupdDir)\KB908002\extensibilityMSM.msi"
+			DestinationFolder = "$(PublishDir)\$(BuildSetupdDir)\KB908002"
+      />
+	  <Copy
+            SourceFiles="$(DistdDir)\$(BuildSetupdDir)\KB908002\lockbackRegKey.msi"
+			DestinationFolder = "$(PublishDir)\$(BuildSetupdDir)\KB908002"
+      />
+	  <Copy
+            SourceFiles="$(DistdDir)\$(BuildSetupdDir)\KB908002\office2003-kb907417sfxcab-ENU.exe"
+			DestinationFolder = "$(PublishDir)\$(BuildSetupdDir)\KB908002"
+      />
+
+<Copy
+            SourceFiles="$(DistdDir)\$(BuildAccessoriesSetupdDir)\Setup_build$(BuildNumber).exe"
+			DestinationFiles="$(PublishDir)\$(BuildAccessoriesSetupdDir)\Setup_build$(BuildNumber).exe" />
+
+	 <Copy
+            SourceFiles="$(DistdDir)\$(BuildAccessoriesSetupdDir)\$(BuiltAccessoriesSetupMsi)"
+			DestinationFolder="$(PublishDir)\$(BuildAccessoriesSetupdDir)" />
+
+	
+
+  </Target>
+  <Target Name="ContinuousIntergration" DependsOnTargets="Checkout">
+		<Message Text="Start to build Project $(BuildDir)\$(SourceDir)\$(MSBuildProject) on target DistPublish" />
+		<MSBuild
+            Projects="$(BuildDir)\$(SourceDir)\$(MSBuildProject)"
+            Targets="DistPublish"
+			StopOnFirstFailure="true"
+		/>
+		<Message Text="CI Run for build number $(BuildNumber) successfully completed" />
+  </Target>
+</Project>

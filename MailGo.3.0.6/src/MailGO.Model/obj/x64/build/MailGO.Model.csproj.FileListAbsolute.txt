@@ -1,0 +1,4 @@
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Model\bin\x64\build\MailGO.Model.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Model\bin\x64\build\MailGO.Model.pdb
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Model\obj\x64\build\MailGO.Model.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Model\obj\x64\build\MailGO.Model.pdb

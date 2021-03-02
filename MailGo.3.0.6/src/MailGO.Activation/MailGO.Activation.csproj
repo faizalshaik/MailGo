@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E30D2DDB-0C2F-4B9A-8C9A-4F49F39A44C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataDesign.MailGO.Activation</RootNamespace>
+    <AssemblyName>MailGO.Activation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\build\MailGO.Activation\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\MailGO.Activation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>..\..\build\MailGO.Activation\MailGO.Activation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MAPI, Version=1.21.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Interop.MAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\lib\Outlook 2016\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files\Reference Assemblies\Microsoft\VSTO40\v4.0.Framework\Microsoft.Office.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files\Reference Assemblies\Microsoft\VSTO40\v4.0.Framework\Microsoft.Office.Tools.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="OFFICE, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\lib\Outlook 2016\OFFICE.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActivationPG.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AskActivationWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskActivationWF.Designer.cs">
+      <DependentUpon>AskActivationWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AskDeActivationWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskDeActivationWF.designer.cs">
+      <DependentUpon>AskDeActivationWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmRequestWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmRequestWF.Designer.cs">
+      <DependentUpon>ConfirmRequestWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeadlineWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeadlineWF.Designer.cs">
+      <DependentUpon>DeadlineWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotMatchWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotMatchWF.Designer.cs">
+      <DependentUpon>NotMatchWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptionWF.Designer.cs">
+      <DependentUpon>OptionWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outlook10EventHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Share.cs" />
+    <Compile Include="ToolBarWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolBarWF.Designer.cs">
+      <DependentUpon>ToolBarWF.cs</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MailGO.Model\MailGO.Model.csproj">
+      <Project>{AD58920E-6EC9-40FD-8C4F-D76B28B49885}</Project>
+      <Name>MailGO.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MailGO.Utils\MailGO.Utils.csproj">
+      <Project>{AAB420D9-A89D-4045-BC0A-2173AD95B4CB}</Project>
+      <Name>MailGO.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AskActivationWF.en.resx">
+      <DependentUpon>AskActivationWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskActivationWF.ja.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AskActivationWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskActivationWF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AskActivationWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskDeActivationWF.en.resx">
+      <DependentUpon>AskDeActivationWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskDeActivationWF.ja.resx">
+      <DependentUpon>AskDeActivationWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskDeActivationWF.resx">
+      <DependentUpon>AskDeActivationWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmRequestWF.ja.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfirmRequestWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmRequestWF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConfirmRequestWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeadlineWF.ja.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeadlineWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeadlineWF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeadlineWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotMatchWF.ja.resx">
+      <DependentUpon>NotMatchWF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotMatchWF.resx">
+      <DependentUpon>NotMatchWF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionWF.en.resx">
+      <DependentUpon>OptionWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionWF.ja.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptionWF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OptionWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolBarWF.ja.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ToolBarWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolBarWF.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ToolBarWF.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

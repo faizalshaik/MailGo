@@ -1,0 +1,12 @@
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\bin\x64\Debug\MailGO.Utils.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\bin\x64\Debug\MailGO.Utils.pdb
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\bin\x64\Debug\ja\MailGO.Utils.resources.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\bin\x64\Debug\log4net.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\DataDesign.MailGO.Utils.ResourceUtil.resources
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\DataDesign.MailGO.Utils.ResourceUtil.ja.resources
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\MailGO.Utils.csproj.GenerateResource.Cache
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\MailGO.Utils.csproj.CoreCompileInputs.cache
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\ja\MailGO.Utils.resources.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\MailGO.Utils.dll
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\MailGO.Utils.pdb
+E:\work\freelancer\C#\MailGo.3.0.4\src\MailGO.Utils\obj\x64\Debug\MailGO.Utils.csprojResolveAssemblyReference.cache
